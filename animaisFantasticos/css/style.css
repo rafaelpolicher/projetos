@@ -113,6 +113,10 @@ body, h1, h2, ul, li, p, dd, dt, dl {
       .animais-lista::-webkit-scrollbar-track {
         background: #faf6ed;
       }
+
+      .animais-lista li{
+        cursor: pointer;
+      }
   
   .animais-descricao {
     grid-column: 3;
@@ -200,5 +204,67 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     .grid-section h1 { font-size: 3rem; }
     .menu{ margin-top: 0; }
     .copy { margin-bottom: 0; }
-  
+  }
+
+  .js-tabcontent section{
+    display: none;
+  }
+
+  .js-tabcontent section.ativo{
+    display: block !important;
+    animation: show .5s forwards;
+  }
+
+  @keyframes show{
+    from{
+      opacity: 0;
+      transform: translate3d(-30px, 0, 0);
+    }
+    to{
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+
+  .js-accordion dd {
+    display: none;
+  }
+
+  .js-accordion dt::after {
+    content: "⤵";
+    margin-left: 10px;
+  }
+
+  .js-accordion dt.ativo::after {
+    content: "⤴";
+    margin-left: 10px;
+  }
+
+  .js-accordion dd.ativo{
+    display: block;
+    animation: slidedown .5s forwards;
+  }
+
+  @keyframes slidedown{
+    from{
+      opacity: 0;
+      max-height: 0;
+    }
+    to{
+      opacity: 1;
+      max-height: 200px;
+    }
+  }
+
+
+.js-scroll{
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+    transition: .3s;
+  }
+
+  .js-scroll.ativo{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }

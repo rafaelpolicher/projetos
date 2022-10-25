@@ -1,32 +1,87 @@
-/*
-const animais = document.getElementById(animais)
+function iniTabNav(){
+const tabMenu = document.querySelectorAll('.js-tabmenu li')
+const tabContent = document.querySelectorAll('.js-tabcontent section')
 
-const gridSection = document.getElementsByClassName("grid-selection")
-
-const primeiraUl= document.querySelector('li')
-
-const linksInternos = document.querySelector('[href^="#"]')
-
-const animaisImg = document.querySelectorAll('.animais img')
-
-primeiraUl.classList.add('grid-section')
-
-const gridSectionHtml = document.getElementsByClassName('grid-section')
-const gridSectionNode = document.querySelectorAll('.grid-section')
-*/
+if(tabMenu.length && tabContent.length){
 
 
-/*ARRAY-LIKE
-HTMLcollection e nodeList sao array- like, se parecem uma array mas nao sao. o metodo foreach() por exemplo, existe apenas em NodeList
-*/
+tabContent[0].classList.add('ativo')
 
-const gridSection = document.querySelectorAll('.grid-selector')
+function activeTab(index){
+    tabContent.forEach((section)=>{
+        section.classList.remove('ativo')
+    })
+    tabContent[index].classList.add('ativo')
+}
 
-gridSection.forEach(function(gridItem, index, array){
-    gridItem.classList.add('azul')
-    console.log(index)//index do item no array
-    console.log(array)//array completo
+tabMenu.forEach((itemMenu,index)=>{
+    itemMenu.addEventListener('click', ()=>{
+        activeTab(index)
+    })
+})}
+}
+iniTabNav()
+
+function initAccordion(){
+
+
+const accordionList = document.querySelectorAll('.js-accordion dt')
+accordionList[0].classList.add('ativo')
+accordionList[0].nextElementSibling.classList.add('ativo')
+
+
+function activeAccordion(){
+    this.classList.toggle('ativo')
+    this.nextElementSibling.classList.toggle('ativo')
+}
+
+accordionList.forEach((item)=>{
+    item.addEventListener('click', activeAccordion)
 })
-/*
-é possivel transformar array like em array. utilizando o metodo ARRAY.FROM(VARIAVEL )
-*/
+}
+initAccordion()
+
+
+function initScroll() {
+    const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+  
+    function scrollToSection(event) {
+      event.preventDefault();
+      const href = event.currentTarget.getAttribute('href');
+      const section = document.querySelector(href);
+  
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+  
+      // const top = section.offsetTop;
+  
+      // window.scrollTo({
+      //   top: section,
+      //   behavior: 'smooth',
+      // });
+    }
+  
+    linksInternos.forEach((link) => {
+      link.addEventListener('click', scrollToSection);
+    });
+  }
+  initScroll();
+
+  function initAniScroll(){
+  const sections = document.querySelectorAll('.js-scroll')
+  const windowMetade = window.innerHeight * 0.7
+
+  function animaScroll(){
+    sections.forEach((section)=>{
+        const sectionTop = section.getBoundingClientRect().top - windowMetade
+        if(sectionTop < 0){
+            section.classList.add('ativo')
+        }
+    })
+  }
+animaScroll()
+  window.addEventListener('scroll', animaScroll)
+}
+initAniScroll()
