@@ -22,6 +22,17 @@ tabMenu.forEach((itemMenu,index)=>{
 }
 iniTabNav()
 
+
+
+
+
+
+
+
+
+
+
+
 function initAccordion(){
 
 
@@ -40,6 +51,15 @@ accordionList.forEach((item)=>{
 })
 }
 initAccordion()
+
+
+
+
+
+
+
+
+
 
 
 function initScroll() {
@@ -68,6 +88,10 @@ function initScroll() {
     });
   }
   initScroll();
+
+
+
+
 
   function initAniScroll(){
   const sections = document.querySelectorAll('.js-scroll')

@@ -12,12 +12,7 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     list-style:  none; 
 }
   
-  :root {
-    --color-primary: #222;
-    --color-secondary: #fb5;
-    --subtitle-color: #e54;
-    --bg-color: #faf6ed;
-  }
+
   
   body {
     background: #faf6ed;
@@ -175,6 +170,10 @@ body, h1, h2, ul, li, p, dd, dt, dl {
       font-weight: bold;
     }
   
+
+
+
+    
   @media only screen and (max-width: 700px) {
     body {
       grid-template-columns: 1fr;
@@ -215,6 +214,10 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     animation: show .5s forwards;
   }
 
+
+
+
+
   @keyframes show{
     from{
       opacity: 0;
@@ -225,6 +228,9 @@ body, h1, h2, ul, li, p, dd, dt, dl {
       transform: translate3d(0, 0, 0);
     }
   }
+
+
+
 
 
   .js-accordion dd {
@@ -245,6 +251,10 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     display: block;
     animation: slidedown .5s forwards;
   }
+
+
+
+
 
   @keyframes slidedown{
     from{
