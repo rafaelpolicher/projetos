@@ -70,6 +70,7 @@ nav ul a:hover{
         box-shadow: 0 10px black, 0 -10px black;
         border-radius: 5px;
         z-index: 999999;
+        transition: .3s;
     }
     .menu .link {
         display: none;
@@ -84,8 +85,10 @@ nav ul a:hover{
         display: block;
     }
 
+    .active .menuHamburguer{
+        
+    }
 }
-
 
 
 
