@@ -5,7 +5,6 @@ const images = [
     {'id': '2', 'url': './img/slide2.jpg'},
     {'id': '3', 'url': './img/slide3.jpg'},
     {'id': '4', 'url': './img/slide4.jpg'},
-    {'id': '5', 'url': './img/slide5.jpg'},
 ]
 
 const containerItems = document.querySelector('.container-items')
@@ -13,7 +12,7 @@ const containerItems = document.querySelector('.container-items')
 const loadImages = (images, container) => {
     images.forEach(image => {
         container.innerHTML += `<div class='item'>
-            <img src='${image.url}'
+            <img alt="imagem" src='${image.url}'
         </div>`
     })
 }
@@ -38,12 +37,38 @@ document.querySelector('#previous').addEventListener('click', next)
 document.querySelector('#next').addEventListener('click', previous)
 
 //scroll
-function scoll() {
-    const internLink = document.querySelectorAll('.menu .a[href^="#"]')
-    console.log(internLink)
+    const internLink = document.querySelectorAll('a[href^="#"]')
+    
+    function scrollToSection(event){
+        event.preventDefault()
+        const href = event.currentTarget.getAttribute("href")
+        const section = document.querySelector(href)
+
+        section.scrollIntoView({
+            behavior: 'smooth',
+        })
+    }
+
+    internLink.forEach((link) =>{
+        link.addEventListener('click', scrollToSection)
+    })
+
+
+//scrollAnimado
+const sections = document.querySelectorAll('.scroll')
+const halfWindow = window.innerHeight * 0.6
+
+function animatedScroll(){
+    sections.forEach((section =>{
+        const sectionTop = section.getBoundingClientRect().top-halfWindow
+        if(sectionTop < 0){
+        section.classList.add('activeScroll')
+        }
+    }))
 }
 
-scroll()
+window.addEventListener('scroll', animatedScroll)
+
 //numeros
 function setNumbers(){
 const numbers = document.querySelectorAll('.estrutura-numeros')
@@ -59,16 +84,27 @@ numbers.forEach((number) =>{
             clearInterval(timer)
             number.innerText = total
         }
-    }, 100 * Math.random())
+    }, 300 * Math.random())
 })
 }
-setNumbers()
+
+function mutation(event){
+    if(event[0].target.classList.contains('activeScroll')){
+        observer.disconnect()
+        setNumbers()
+    }
+}
+const observeTarget = document.querySelector(".estrutura")
+const observer = new MutationObserver(mutation)
+
+observer.observe(observeTarget, {attributes: true})
 
 //menu mobile
 
 const menu = document.querySelector(".menu")
 const menuHamburguer = document.querySelector('#menu-hamburguer')
 menuHamburguer.addEventListener("click", menuMobile)
+
 
 function menuMobile(event){
     menu.classList.toggle("active")
