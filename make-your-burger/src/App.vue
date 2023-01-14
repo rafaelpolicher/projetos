@@ -3,7 +3,7 @@
 <template>
   <Navbar :logo="logo_src" :alt="app_name"/>
   <RouterView />
-  <Footer/>
+  <Footer />
 </template>
 <script>
   import Navbar from './components/Navbar.vue';
