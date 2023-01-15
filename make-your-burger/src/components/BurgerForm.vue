@@ -2,7 +2,7 @@
     <div>
         <p>componente de menasgem</p>
         <div id="burger-form-container">
-            <form id="burger-form">
+            <form id="burger-form" @submit="createBurger">
                 <div class="imput-container">
                     <label for="name">Client name</label>
                     <input type="text" id="name" name="name" v-model="name" placeholder="Type your name">
@@ -25,13 +25,14 @@
                         <option v-for="meat in meats" :key="meat.id" :value="meat.type">
                             {{ meat.type }}
                         </option>
-                </select>
+                    </select>
                 </div>
-                <div class="input-container" id="ingredients-container">
-                    <label for="ingredients" id="ingredients-title">Add ingredients</label>
-                    <div class="checkbox-container" v-for="ingredient in ingredientsdata" :key="ingredient.id" >
-                        <input type="checkbox" name="ingredients"  v-model="ingredients" :value="ingredient.type"><span>{{ingredient.type}}</span>
-                    </div>
+                <div id="options-container" class="input-container">
+                    <label id="options-title" for="options">Choose the ingredients:</label>
+                    <div class="checkbox-container" v-for="option in optionsdata" :key="option.id">
+                    <input type="checkbox" name="options" v-model="options" :value="option.type">
+                    <span>{{ option.type }}</span>
+                </div>
 
                 </div>
                 <div class="input-container">
@@ -50,13 +51,12 @@ export default {
 //data from server
             breads: null,
             meats: null,
-            ingredientsdata: null,
+            optionsdata: null,
 //data to server
             name: null,
             bread: null,
             meat: null,
-            ingredient: [],
-            status: "Requested",
+            options: [],
             msg: null
         }
     },
@@ -68,8 +68,38 @@ export default {
 
             this.breads = data.breads
             this.meats = data.meats
-            this.ingredientsdata = data.ingredients
+            this.optionsdata = data.options
         },
+        async createBurger(e){
+            e.preventDefault()
+
+            const data = {
+                name: this.name,
+                bread: this.bread,
+                meat: this.meat,
+                options: Array.from(this.options),
+                status: "Requested"
+            }
+            const dataJson = JSON.stringify(data)//transformar em texto
+
+            const req = await fetch("http://localhost:3000/burgers", {
+                method: "POST",
+                headers: { "Content-Type" : "application/json" },
+                body: dataJson
+            });//POSTAR no banco
+            const res = await req.json()
+            
+            //colocar mensagem
+
+            //apagar mensagem
+            
+            //limpar campos
+            this.name = ""
+            this.meat = ""
+            this.bread = ""
+            this.options = ""
+
+            }
     },
     mounted(){
         this.getIngredients()
@@ -102,11 +132,11 @@ export default {
     }
 
 
-    #ingredients-container{
+    #options-container{
         flex-direction: row;
         flex-wrap: wrap;
     }
-    #ingredients-title{
+    #options-title{
         width: 100%;
     }
     .checkbox-container{
