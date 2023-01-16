@@ -79,168 +79,25 @@
   ],
   "burgers": [
     {
-      "id": 1
-    },
-    {
-      "name": "joao",
-      "bread": "Italian",
-      "options": [
-        "Salame",
-        "Tomato"
-      ],
-      "status": "Requested",
-      "id": 2
-    },
-    {
-      "name": "joao",
-      "bread": "Cheese",
-      "meats": [
-        {
-          "id": 1,
-          "type": "Chicken"
-        },
-        {
-          "id": 2,
-          "type": "Rib"
-        },
-        {
-          "id": 3,
-          "type": "Pork"
-        },
-        {
-          "id": 4,
-          "type": "Veggie burger"
-        }
-      ],
-      "options": [
-        "Bacon"
-      ],
-      "status": "Requested",
-      "id": 3
-    },
-    {
-      "name": "joao",
-      "bread": "Cheese",
-      "meats": [
-        {
-          "id": 1,
-          "type": "Chicken"
-        },
-        {
-          "id": 2,
-          "type": "Rib"
-        },
-        {
-          "id": 3,
-          "type": "Pork"
-        },
-        {
-          "id": 4,
-          "type": "Veggie burger"
-        }
-      ],
-      "options": [
-        "Bacon"
-      ],
-      "status": "Requested",
-      "id": 4
-    },
-    {
-      "name": "joao",
-      "bread": "Vegan",
-      "meats": [
-        {
-          "id": 1,
-          "type": "Chicken"
-        },
-        {
-          "id": 2,
-          "type": "Rib"
-        },
-        {
-          "id": 3,
-          "type": "Pork"
-        },
-        {
-          "id": 4,
-          "type": "Veggie burger"
-        }
-      ],
-      "options": [
-        "Bacon"
-      ],
-      "status": "Requested",
-      "id": 5
-    },
-    {
-      "name": "joao",
-      "bread": "Italian",
-      "meat": [
-        {
-          "id": 1,
-          "type": "Chicken"
-        },
-        {
-          "id": 2,
-          "type": "Rib"
-        },
-        {
-          "id": 3,
-          "type": "Pork"
-        },
-        {
-          "id": 4,
-          "type": "Veggie burger"
-        }
-      ],
-      "options": [
-        "Bacon",
-        "Cheddar"
-      ],
-      "status": "Requested",
-      "id": 6
-    },
-    {
-      "name": "joao",
+      "name": "yasmin",
       "bread": "Cheese",
       "meat": "Rib",
       "options": [
         "Bacon",
-        "Tomato"
+        "Salame"
       ],
-      "status": "Requested",
-      "id": 7
+      "status": "Finished",
+      "id": 1
     },
     {
-      "name": "ze",
-      "bread": "Cheese",
-      "meat": "Chicken",
-      "options": [
-        "Bacon"
-      ],
-      "status": "Requested",
-      "id": 8
-    },
-    {
-      "name": "joao",
-      "bread": "Cheese",
-      "meat": "Pork",
-      "options": [
-        "Onion"
-      ],
-      "status": "Requested",
-      "id": 9
-    },
-    {
-      "name": "ze",
+      "name": "rafael",
       "bread": "Vegan",
       "meat": "Veggie burger",
       "options": [
-        "Tomato",
-        "Onion"
+        "Tomato"
       ],
-      "status": "Requested",
-      "id": 10
+      "status": "Finished",
+      "id": 2
     }
   ]
 }

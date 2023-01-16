@@ -1,6 +1,7 @@
 <template>
-  <Banner />
+  
   <div class="main-container">
+    <Banner />
     <h1>Build your burger:</h1>
     <BurgerForm/>
   </div>
