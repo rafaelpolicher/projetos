@@ -34,7 +34,7 @@
       </div>
     </div>
     <div v-else>
-      <h2>Não há pedidos no momento!</h2>
+      <h2>There are no orders</h2>
     </div>
   </template>
   <script>
