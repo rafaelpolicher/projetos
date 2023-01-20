@@ -98,6 +98,16 @@
       ],
       "status": "Finished",
       "id": 2
+    },
+    {
+      "name": "Zach",
+      "bread": "Italian",
+      "meat": "Rib",
+      "options": [
+        "Bacon"
+      ],
+      "status": "In production",
+      "id": 3
     }
   ]
 }
