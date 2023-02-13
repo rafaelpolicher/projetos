@@ -46,14 +46,17 @@ function App() {
       }
     })
 
+    setTodos((prevState) => [...prevState, todo])
+
   setTitle('')
   setTime('')
 
     console.log("enviou")
   }
 
-  
-
+  if(loading){
+    return <p>Loading...</p>
+  }
   return (
     <div className="App">
       <div className='todo-header'>
@@ -90,7 +93,14 @@ function App() {
         {todos.length === 0 && <p>there are no tasks</p>}
         {todos.map((todo) =>(
           <div className='todo' key={todo.id}>
-            <p>{todo.title}</p>
+            <h3 className={todo.done ? 'todo-done' : ''}>{todo.title}</h3>
+            <p>Time: {todo.time}</p>
+            <div className="actions">
+              <span>
+                {!todo.done ? <BsBookmarkCheck/> : <BsBookmarkCheckFill/>}
+              </span>
+              <BsTrash/>
+            </div>
           </div>
         ))}
       </div>
