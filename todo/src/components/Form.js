@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import '../styles/Form.sass';
 
 
 
@@ -35,12 +36,13 @@ function Form(){
         console.log("enviou")
       }
     return(
-        <div className='todo-form'>
+        <div className='form'>
         <h2>Insert your next task</h2>
         <form onSubmit={handleSubmit}>
           <div className='form-control'>
             <label htmlFor="title">What you gonna do?</label>
-            <input type="text" 
+            <input className='write'
+            type="text" 
             name='title' 
             placeholder='Task title' 
             onChange={(e)=> setTitle(e.target.value)}
@@ -50,7 +52,8 @@ function Form(){
 
           <div className='form-control'>
             <label htmlFor="time">How much hours do you need?</label>
-            <input type="text" 
+            <input className='write'
+            type="text" 
             name='time' 
             placeholder='Task time' 
             onChange={(e)=> setTime(e.target.value)}
@@ -58,7 +61,7 @@ function Form(){
             required/>
           </div>
 
-          <input type="submit" value="Add task" />
+          <input type="submit" value="Add task" className='btn'/>
         </form>
       </div>
     )
