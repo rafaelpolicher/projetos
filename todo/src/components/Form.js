@@ -11,7 +11,7 @@ function Form(){
 
 
     const handleSubmit = async (e) =>{
-        e.preventDefault()
+        
     
         const todo = {
         id: Math.random(),

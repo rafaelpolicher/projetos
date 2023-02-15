@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import {BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from 'react-icons/bs'
+import '../styles/List.sass';
 
 function List(){
     const API = "http://localhost:5000"
@@ -46,13 +47,15 @@ function List(){
             return <p>Loading...</p>
           }
     return(
-        <div className='todo-list'>
+        <div className='list'>
         <h2>Todo list</h2>
         {todos.length === 0 && <p>there are no tasks</p>}
         {todos.map((todo) =>(
           <div className='todo' key={todo.id}>
-            <h3 className={todo.done ? 'todo-done' : ''}>{todo.title}</h3>
+            <h3 className={todo.done ? 'todo-done' : 'todo-not'}>{todo.title}</h3>
+
             <p>Time: {todo.time}</p>
+
             <div className="actions">
               <span onClick={()=> handleEdit(todo)} >
                 {!todo.done ? <BsBookmarkCheck/> : <BsBookmarkCheckFill/>}
