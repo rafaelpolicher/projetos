@@ -54,7 +54,7 @@ function List(){
           <div className='todo' key={todo.id}>
             <h3 className={todo.done ? 'todo-done' : 'todo-not'}>{todo.title}</h3>
 
-            <p>Time: {todo.time}</p>
+            <p>Time: {todo.time} Hours</p>
 
             <div className="actions">
               <span onClick={()=> handleEdit(todo)} >
