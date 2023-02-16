@@ -13,4 +13,20 @@ class Conta
         @saldo = saldo
     end
 
+    def sacar(valor)
+        if saldo >= valor
+            @saldo -= valor #saldo é igual a saldo - valor////// @ pode ser substituido por self.saldo, igual a this em js
+        else
+            puts "saldo indisponivel"
+        end
+    end
+
+    def depositar(valor)
+        self.saldo += valor
+    end
+
+    def transferir(conta_destino, valor)
+        sacar(valor)
+        conta_destino.depositar(valor)
+    end
 end
