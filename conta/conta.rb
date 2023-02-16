@@ -1,3 +1,5 @@
+require_relative 'cliente'
+
 class Conta
     
 #V para acessar atributos somente leitura
@@ -7,9 +9,9 @@ class Conta
     attr_accessor :saldo
 
 #V necessario initialize com os atributos
-    def initialize(numero, titular, saldo)
+    def initialize(numero, nome, sobrenome, saldo)
         @numero = numero
-        @titular = titular
+        @titular = Cliente.new(nome, sobrenome)
         @saldo = saldo
     end
 
