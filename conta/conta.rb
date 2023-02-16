@@ -26,7 +26,11 @@ class Conta
     end
 
     def transferir(conta_destino, valor)
-        sacar(valor)
-        conta_destino.depositar(valor)
+        if saldo >= valor
+            sacar(valor)
+            conta_destino.depositar(valor)
+        else
+            puts "saldo indisponivel"
+        end
     end
 end
