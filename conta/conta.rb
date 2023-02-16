@@ -9,9 +9,9 @@ class Conta
     attr_accessor :saldo
 
 #V necessario initialize com os atributos
-    def initialize(numero, nome, sobrenome, saldo)
+    def initialize(numero, titular, saldo)
         @numero = numero
-        @titular = Cliente.new(nome, sobrenome)
+        @titular = titular
         @saldo = saldo
     end
 
