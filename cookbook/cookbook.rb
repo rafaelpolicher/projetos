@@ -22,7 +22,7 @@ def inserir_receita
     puts
 
     puts
-    puts "Receita #{nome} cadastrada com sucesso"
+    puts "Receita #{nome} cadastrada com sucesso!"
     puts
     return receitas << {nome: nome, tipo: tipo}
 end
