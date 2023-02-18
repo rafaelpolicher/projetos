@@ -58,7 +58,7 @@ while(opcao != 3)
     
 
     else
-        puts "Escolha uma opçao valida"
+        puts "Escolha uma opção valida"
     end
 
     opcao = menu()
