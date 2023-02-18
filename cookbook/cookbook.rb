@@ -64,4 +64,4 @@ while(opcao != 3)
     opcao = menu()
 end
 
-puts "obrigado por usar o cookbook"
+puts "obrigado por usar o cookbook!"
