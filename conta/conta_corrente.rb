@@ -12,7 +12,7 @@ class ContaCorrente < Conta
 
     def sacar(valor)
         if (saldo + limite) >= valor
-            @saldo -= valor #saldo é igual a saldo - valor////// @ pode ser substituido por self.saldo, igual a this em js
+            @saldo -= valor #saldo é igual a saldo - valor////// @ pode ser substituido por self.saldo, igual a this em JS
         else
             puts "saldo indisponivel"
         end
